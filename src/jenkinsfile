@@ -1,0 +1,36 @@
+pipeline {
+  agent any
+
+  stages {
+      
+      stage('备份代码') {
+          steps {
+              sh"""
+                  ssh -t -l root 172.16.16.116 -p 2222 << EOF
+                  cp -r /data/static/zhoulili/dist /data/static/zhoulili/dist.`date "+%Y-%m-%d_%H-%M-%S"`
+              exit
+              EOF
+              """
+          }
+      }
+      stage('解压前端文件') {
+          steps {
+              sh"""
+              unzip dist.zip
+              scp -r -P 2222 dist/* root@172.16.16.116:/data/static/zhoulili/dist
+              rm dist -rf
+              """
+          }
+      }
+      stage('重启服务') {
+          steps {
+              sh"""
+                  echo "构建完成"
+              exit
+              EOF
+                  
+              """
+          }
+      }
+  }
+}

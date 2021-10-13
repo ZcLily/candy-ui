@@ -5,6 +5,7 @@ export default defineComponent({
 	setup() {     
 		return () => (
 			<div>
+				<BannerDemo></BannerDemo>
 				<TabsDemo></TabsDemo>
 			</div>
 		);     
