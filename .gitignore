@@ -7,6 +7,8 @@ docs/.vuepress/dist
 # local env files
 .env.local
 .env.*.local
+.temp
+.cache
 
 # Log files
 npm-debug.log*
