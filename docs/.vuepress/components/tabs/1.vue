@@ -1,4 +1,11 @@
-import { defineComponent, ref } from 'vue';
+<template>
+  <div>
+    <tabs value={value} options={options} onChange={onChange}></tabs>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
 export default defineComponent({     
 	setup() { 
     const value = '有状态副本集'
@@ -9,11 +16,8 @@ export default defineComponent({
     ]
     const onChange = (val: string) => {
       console.log(val)
-    }
-		return () => (
-			<div>
-				<tabs value={value} options={options} onChange={onChange}></tabs>
-			</div>
-		);     
+    }    
 	},
 });
+</script>
+

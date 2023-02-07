@@ -19,12 +19,29 @@ module.exports = {
     // requireModuleExtension: false
   },
 
+
+
   chainWebpack: () => {
-    
+     // ...other chains
+    //  config.module
+    //  .rule('mjs$')
+    //  .test(/\.mjs$/)
+    //  .include
+    //     .add(/node_modules/)
+    //     .end()
+    //  .type('javascript/auto');
   },
 
-  configureWebpack: () => {
-    
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: (/\.mjs$/),
+          include:/node_modules/,
+          type: 'javascript/auto'
+        }
+      ]
+    }
   }
 
   // devServer: {

@@ -1,26 +1,58 @@
-const navbar = require('./config/navbar')
-const sidebar = require('./config/sidebar')
+import { defineUserConfig } from 'vuepress'
+import { defaultTheme } from 'vuepress'
+import {
+  head,
+  navbarZh,
+  sidebarZh,
+} from './configs/index.ts'
 
-module.exports = {
-  title: 'UILI', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
-  description: 'UI组件库', // meta 中的描述文字，用于SEO
-  // 注入到当前页面的 HTML <head> 中的标签
-  head: [
-      ['link', 
-          { rel: 'icon', href: '/logo.png' }
-          //浏览器的标签栏的网页图标，第一个'/'会遍历public文件夹的文件
-      ],  
-  ],
-  //下面涉及到的md文件和其他文件的路径下一步再详细解释
-  themeConfig: {
-    logo: '/logo.png',  //网页顶端导航栏左上角的图标
-    
-    //顶部导航栏
-    navbar,
-    
-    //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
-    sidebar,
-    sidebarDepth: 2,
-  }
-  
-}  
+const isProd = process.env.NODE_ENV === 'production'
+
+export default defineUserConfig({
+  // set site base to default value
+  base: '/',
+
+  // extra tags in `<head>`
+  head,
+
+  // site-level locales config
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+      title: 'UlLili',
+      description: '基于 Vue 3，面向设计师和开发者的组件库',
+    },
+  },
+
+  // configure default theme
+  theme: defaultTheme({
+    logo: '/logo.png',
+    docsDir: 'docs',
+    repo: 'https://github.com/ZcLily/lili-vue-page-main',
+    repoLabel: '仓库地址',
+
+    // theme-level locales config
+    locales: {
+
+      /**
+       * Chinese locale config
+       */
+      '/': {
+        // navbar
+        navbar: navbarZh,
+        // sidebar
+        sidebar: sidebarZh,
+      },
+    },
+
+    themePlugins: {
+      // only enable git plugin in production mode
+      git: isProd,
+      // use shiki plugin in production mode instead
+      prismjs: !isProd,
+    },
+  }),
+
+  // use plugins
+  plugins: [],
+})

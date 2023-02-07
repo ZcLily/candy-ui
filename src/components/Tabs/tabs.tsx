@@ -27,8 +27,10 @@ export default defineComponent({
     watch(
       tabsValue,
       () => {
-        emit('update:value', tabsValue.value)
-        emit('change', tabsValue.value)
+        const value = tabsValue.value
+        emit('update:value', value)
+        const option = props.options.find((item: any) => item.label === value)
+        emit('change', option)
       },
       { immediate: true },
     );
@@ -47,7 +49,7 @@ export default defineComponent({
         >
         {
           options.map((option: any) => (
-            <el-radio-button label={option.label} key={option.label}></el-radio-button>
+            <el-radio-button label={option.label} key={option.label} disabled={option.disabled}></el-radio-button>
           ))
         }
       </el-radio-group>

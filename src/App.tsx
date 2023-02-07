@@ -6,7 +6,7 @@ export default defineComponent({
 		return () => (
 			<div>
 				<BannerDemo></BannerDemo>
-				{/* <TabsDemo></TabsDemo> */}
+				<TabsDemo></TabsDemo>
 			</div>
 		);     
 	},
