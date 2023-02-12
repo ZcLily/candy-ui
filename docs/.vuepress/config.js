@@ -28,7 +28,7 @@ export default defineUserConfig({
   theme: defaultTheme({
     logo: '/logo.png',
     docsDir: 'docs',
-    repo: 'https://github.com/ZcLily/lili-vue-page-main',
+    repo: 'https://github.com/ZcLily/candy-ui',
     repoLabel: '仓库地址',
 
     // theme-level locales config
