@@ -19,7 +19,7 @@ export default defineUserConfig({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'UlLili',
+      title: 'CandyUI',
       description: '基于 Vue 3，面向设计师和开发者的组件库',
     },
   },

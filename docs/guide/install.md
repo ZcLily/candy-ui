@@ -1,8 +1,8 @@
 # 安装
 
 ```bash
-yarn add UlLili
+yarn add CandyUI
 
 # OR
 
-npm install --save-dev UlLili
+npm install --save-dev CandyUI

@@ -1,12 +1,12 @@
-# 引入 UlLili
+# 引入 CandyUI
 
 ## 完整引入
 
 ```js
 import { createApp } from 'vue'
-import UlLili from 'UlLili'
+import CandyUI from 'CandyUI'
 
-Vue.use(UlLili)
+Vue.use(CandyUI)
 ```
 
 ### 按需引入
@@ -16,7 +16,7 @@ Vue.use(UlLili)
 
 ```js
 // 导入写法
-import { Banner } from 'UlLili'
+import { Banner } from 'CandyUI'
 ```
 
 
@@ -27,7 +27,7 @@ import {
   HelloWorld,
   Banner,
   Tabs
-} from 'UlLili'
+} from 'CandyUI'
 
 Vue.use(HelloWorld)
 Vue.use(Banner)
