@@ -1,6 +1,9 @@
 const AutoImport = require('unplugin-auto-import/webpack')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
   publicPath: '',
   outputDir: 'dist',
@@ -43,6 +46,7 @@ module.exports = {
       Components({
         resolvers: [ElementPlusResolver()],
       }),
+      new BundleAnalyzerPlugin(),
     ],
   },
 

@@ -1,18 +1,12 @@
-import { createApp } from 'vue'
-import App from './App'
-import liliUI from './components/index'
-import './styles/main.less'
+import { createApp } from "vue";
+import App from "./App";
+import CandyUI from "./components/index";
+import "./styles/main.less";
+import { globalRegister } from "./global";
+import "element-plus/dist/index.css";
 
-import { ElRadioGroup, ElRadioButton, ElButton } from 'element-plus'
-import 'element-plus/dist/index.css'
+const app = createApp(App);
+app.use(globalRegister);
+app.use(CandyUI);
 
-
-const app = createApp(App)
-app.use(ElRadioGroup)
-app.use(ElRadioButton)
-app.use(ElButton)
-app.use(liliUI)
-
-console.log(ElRadioGroup)
-
-app.mount('#app')
+app.mount("#app");
