@@ -2,11 +2,17 @@ import { createApp } from 'vue'
 import App from './App'
 import liliUI from './components/index'
 import './styles/main.less'
-import ElementPlus from 'element-plus'
+
+import { ElRadioGroup, ElRadioButton, ElButton } from 'element-plus'
 import 'element-plus/dist/index.css'
 
 
 const app = createApp(App)
+app.use(ElRadioGroup)
+app.use(ElRadioButton)
+app.use(ElButton)
 app.use(liliUI)
-app.use(ElementPlus)
+
+console.log(ElRadioGroup)
+
 app.mount('#app')

@@ -41,6 +41,7 @@ export default defineComponent({
   },
   render() {
     const { options } = this
+  
 
     return (
       <el-radio-group

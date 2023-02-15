@@ -1,4 +1,4 @@
-# vue-pagemain
+# CandyUI
 
 ## Project setup
 ```
